@@ -91,9 +91,9 @@ $now = dol_now();
 $form = new Form($db);
 $formfile = new FormFile($db);
 
-llxHeader("", $langs->trans("IndicadoresArea"));
+llxHeader("", $langs->trans("Crear Grafica"));
 
-print load_fiche_titre($langs->trans("IndicadoresArea"), '', 'indicadores.png@indicadores');
+print load_fiche_titre($langs->trans("Crear Grafica"), '', 'indicadores.png@indicadores');
 
 print '<div class="fichecenter"><div class="fichethirdleft">';
 
@@ -234,8 +234,7 @@ if (! empty($conf->indicadores->enabled) && $user->rights->indicadores->read)
 }
 */
 
-print '</div></div>';
-
 // End of page
 llxFooter();
 $db->close();
+
