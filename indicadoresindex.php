@@ -1,3 +1,4 @@
+<html>
 <?php
 /* Copyright (C) 2001-2005 Rodolphe Quiedeville <rodolphe@quiedeville.org>
  * Copyright (C) 2004-2015 Laurent Destailleur  <eldy@users.sourceforge.net>
@@ -93,10 +94,12 @@ $formfile = new FormFile($db);
 
 llxHeader("", $langs->trans("IndicadoresArea"));
 
-print load_fiche_titre($langs->trans("IndicadoresArea"), '', 'indicadores.png@indicadores');
+print file_get_contents('administracion.sitio.php');
 
 print '<div class="fichecenter"><div class="fichethirdleft">';
+//Aquí comienza mi HTML
 
+//Aqui termina mi HTML
 
 /* BEGIN MODULEBUILDER DRAFT MYOBJECT
 // Draft MyObject
@@ -176,6 +179,7 @@ END MODULEBUILDER DRAFT MYOBJECT */
 print '</div><div class="fichetwothirdright">';
 
 
+
 $NBMAX = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
 $max = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
 
@@ -239,3 +243,7 @@ print '</div></div>';
 // End of page
 llxFooter();
 $db->close();
+?>
+<?php
+?>
+
