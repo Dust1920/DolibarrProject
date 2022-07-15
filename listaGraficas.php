@@ -57,13 +57,14 @@ $conexion = mysqli_connect('localhost','root','','dolibarr')
 //insertar tabla, botón y css
 ?>
 <html>
-<link rel="stylesheet" type="text/css" href="css-lista.css" media="screen" />
-<button class="button1" type="button" onClick="window.location.reload();">Refrescar</button>
-<br>
-<table class="tabla1">
-<th  class="tituloTabla" color="white" colspan="3"><h1 style="color:white;">Gráficas</h1></th>
+<link href="../../htdocs/theme/md/style.css" rel="stylesheet" type="text/css">
 
-<tr class="subtitulo">
+<br>
+<table class="table table-hover table-striped">
+	
+<th class="table-primary" colspan="3"><h1 style="color:white;"><center>Gráficas</center></h1></th>
+
+<tr class="table-dark table-hover">
 <td>Nombre</td>
 <td>Tipo</td>
 <td>Fecha</td>
@@ -78,7 +79,7 @@ $result=mysqli_query($conexion,$sql);
 while ($mostrar=mysqli_fetch_array($result)) {
 ?>
 
-<tr class="subtitulo2">
+<tr>
 <td><?php echo $mostrar['name']?></td>
 <td><?php echo $mostrar['type']?></td>
 <td><?php echo $mostrar['tms']?></td>
