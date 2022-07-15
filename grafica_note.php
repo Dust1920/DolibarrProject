@@ -17,9 +17,9 @@
  */
 
 /**
- *  \file       gato_note.php
- *  \ingroup    prueba
- *  \brief      Tab for notes on Gato
+ *  \file       grafica_note.php
+ *  \ingroup    indicadores
+ *  \brief      Tab for notes on grafica
  */
 
 //if (! defined('NOREQUIREDB'))              define('NOREQUIREDB', '1');				// Do not create database handler $db
@@ -74,11 +74,11 @@ if (!$res) {
 	die("Include of main fails");
 }
 
-dol_include_once('/prueba/class/gato.class.php');
-dol_include_once('/prueba/lib/prueba_gato.lib.php');
+dol_include_once('/indicadores/class/grafica.class.php');
+dol_include_once('/indicadores/lib/indicadores_grafica.lib.php');
 
 // Load translation files required by the page
-$langs->loadLangs(array("prueba@prueba", "companies"));
+$langs->loadLangs(array("indicadores@indicadores", "companies"));
 
 // Get parameters
 $id = GETPOST('id', 'int');
@@ -88,17 +88,17 @@ $cancel     = GETPOST('cancel', 'aZ09');
 $backtopage = GETPOST('backtopage', 'alpha');
 
 // Initialize technical objects
-$object = new Gato($db);
+$object = new Grafica($db);
 $extrafields = new ExtraFields($db);
-$diroutputmassaction = $conf->prueba->dir_output.'/temp/massgeneration/'.$user->id;
-$hookmanager->initHooks(array('gatonote', 'globalcard')); // Note that conf->hooks_modules contains array
+$diroutputmassaction = $conf->indicadores->dir_output.'/temp/massgeneration/'.$user->id;
+$hookmanager->initHooks(array('graficanote', 'globalcard')); // Note that conf->hooks_modules contains array
 // Fetch optionals attributes and labels
 $extrafields->fetch_name_optionals_label($object->table_element);
 
 // Load object
 include DOL_DOCUMENT_ROOT.'/core/actions_fetchobject.inc.php'; // Must be include, not include_once  // Must be include, not include_once. Include fetch and fetch_thirdparty but not fetch_optionals
 if ($id > 0 || !empty($ref)) {
-	$upload_dir = $conf->prueba->multidir_output[!empty($object->entity) ? $object->entity : $conf->entity]."/".$object->id;
+	$upload_dir = $conf->indicadores->multidir_output[!empty($object->entity) ? $object->entity : $conf->entity]."/".$object->id;
 }
 
 
@@ -106,9 +106,9 @@ if ($id > 0 || !empty($ref)) {
 // Set $enablepermissioncheck to 1 to enable a minimum low level of checks
 $enablepermissioncheck = 0;
 if ($enablepermissioncheck) {
-	$permissiontoread = $user->rights->prueba->gato->read;
-	$permissiontoadd = $user->rights->prueba->gato->write;
-	$permissionnote = $user->rights->prueba->gato->write; // Used by the include of actions_setnotes.inc.php
+	$permissiontoread = $user->rights->indicadores->grafica->read;
+	$permissiontoadd = $user->rights->indicadores->grafica->write;
+	$permissionnote = $user->rights->indicadores->grafica->write; // Used by the include of actions_setnotes.inc.php
 } else {
 	$permissiontoread = 1;
 	$permissiontoadd = 1;
@@ -120,7 +120,7 @@ if ($enablepermissioncheck) {
 //if ($user->socid > 0) $socid = $user->socid;
 //$isdraft = (($object->status == $object::STATUS_DRAFT) ? 1 : 0);
 //restrictedArea($user, $object->element, $object->id, $object->table_element, '', 'fk_soc', 'rowid', $isdraft);
-if (empty($conf->prueba->enabled)) accessforbidden();
+if (empty($conf->indicadores->enabled)) accessforbidden();
 if (!$permissiontoread) accessforbidden();
 
 
@@ -146,18 +146,18 @@ $form = new Form($db);
 
 //$help_url='EN:Customers_Orders|FR:Commandes_Clients|ES:Pedidos de clientes';
 $help_url = '';
-llxHeader('', $langs->trans('Gato'), $help_url);
+llxHeader('', $langs->trans('Grafica'), $help_url);
 
 if ($id > 0 || !empty($ref)) {
 	$object->fetch_thirdparty();
 
-	$head = gatoPrepareHead($object);
+	$head = graficaPrepareHead($object);
 
-	print dol_get_fiche_head($head, 'note', $langs->trans("Gato"), -1, $object->picto);
+	print dol_get_fiche_head($head, 'note', $langs->trans("grafica"), -1, $object->picto);
 
 	// Object card
 	// ------------------------------------------------------------
-	$linkback = '<a href="'.dol_buildpath('/prueba/gato_list.php', 1).'?restore_lastsearch_values=1'.(!empty($socid) ? '&socid='.$socid : '').'">'.$langs->trans("BackToList").'</a>';
+	$linkback = '<a href="'.dol_buildpath('/indicadores/grafica_list.php', 1).'?restore_lastsearch_values=1'.(!empty($socid) ? '&socid='.$socid : '').'">'.$langs->trans("BackToList").'</a>';
 
 	$morehtmlref = '<div class="refidno">';
 	/*
