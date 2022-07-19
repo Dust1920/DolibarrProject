@@ -95,9 +95,6 @@ llxHeader("", $langs->trans("Crear Grafica"));
 
 print load_fiche_titre($langs->trans("Crear Grafica"), '', 'indicadores.png@indicadores');
 
-print '<div class="fichecenter"><div class="fichethirdleft">';
-
-
 /* BEGIN MODULEBUILDER DRAFT MYOBJECT
 // Draft MyObject
 if (! empty($conf->indicadores->enabled) && $user->rights->indicadores->read)
@@ -172,9 +169,10 @@ if (! empty($conf->indicadores->enabled) && $user->rights->indicadores->read)
 }
 END MODULEBUILDER DRAFT MYOBJECT */
 
-
-print '</div><div class="fichetwothirdright">';
-
+print '<div class="fichecenter">';
+print '<div class="fichethirdleft">';
+print file_get_contents('PruebaH.html');
+print '</div></div>';
 
 $NBMAX = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
 $max = $conf->global->MAIN_SIZE_SHORTLIST_LIMIT;
@@ -233,8 +231,9 @@ if (! empty($conf->indicadores->enabled) && $user->rights->indicadores->read)
 	}
 }
 */
-
 // End of page
 llxFooter();
 $db->close();
+
+?>
 

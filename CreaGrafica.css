@@ -1,0 +1,39 @@
+
+
+.Titulo {
+  text-align: center;
+  text-decoration: none;
+  font-size: 30px;
+  }
+
+.GList {
+    text-align: left;
+    font-size: 16px;
+    border: 1px solid #786EE3
+}
+
+.CG {
+    display: block;
+    text-align: center;
+    padding: 6px 24px;
+    font-size: 16px;
+  }
+
+  .BSpaces {
+    padding: 6px 40px;
+    justify-content: center;
+    border: 1px solid #786EE3;
+  }
+
+  .button1 {
+    display: block;
+    margin: auto;
+    background-color: #786EE3;
+    border: none;
+    border-radius: 4px;
+    color: white;
+  padding: 10px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  }
