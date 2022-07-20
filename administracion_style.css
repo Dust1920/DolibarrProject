@@ -1,7 +1,43 @@
 
-h1 {
+table.tabla-grafica.noborder.noborder.noborder#tabladatos {
+    width: 100% ;
+    border-radius: 15px;
+}
+.table-section {
+    width: 50%;
+}
+.modify-section {
+    width: 50%;
+}
+td {
+    width: 33%;
+}
+
+.header {
     text-align: center;
 }
+
+#sql-input-button {
+    width: fit-content;
+    height: 50%;
+    align-self: center;
+
+}
+
+#sql-input-text {
+    width: 180px;
+    display: inline;
+}
+#refresh-table-button {
+    width: fit-content
+}
+
+.first-child {
+    display: inline;
+    width: 200px;
+    height: 100%;
+}
+
 #sql-input-section {
     width: 100%;
     height: auto;
@@ -9,18 +45,47 @@ h1 {
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
-#sql-input-button{
-    width: fit-content;
-    height: fit-content;
+.twin-columns1 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.twin-columns2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.table-container {
+    width: 100%;
+    border-right: 1px solid red; 
+    display: inline-block; 
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
     
 }
-#sql-input-text {
-    width: 180px;
-    display: inline;
+.column1 {
+    width: 30%;
 }
-.first-child {
-    display: inline;
-    width: 200px;
-    height: 100%;
+.column2 {
+    width: 60%;
+}
+.delete-button {
+    background-color: red !important;
 }
