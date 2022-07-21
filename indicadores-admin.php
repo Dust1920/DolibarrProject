@@ -20,7 +20,7 @@
  */
 
 /**
- *	\file       indicadores/indicadoresindex.php
+ *	\file       indicadores/indicadores-admin.php
  *	\ingroup    indicadores
  *	\brief      Home page of indicadores top menu
  */
