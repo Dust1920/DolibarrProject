@@ -293,7 +293,7 @@ class modIndicadores extends DolibarrModules
 			'prefix' => img_picto('', $this->picto, 'class="paddingright pictofixedwidth valignmiddle"'),
 			'mainmenu'=>'indicadores',
 			'leftmenu'=>'',
-			'url'=>'/indicadores/indicadoresindex.php',
+			'url'=>'/indicadores/indicadores-administracion.php',
 			'langs'=>'indicadores@indicadores', // Lang file to use (without .lang) by module. File must be in langs/code_CODE/ directory.
 			'position'=>1000 + $r,
 			'enabled'=>'$conf->indicadores->enabled', // Define condition to show or hide menu entry. Use '$conf->indicadores->enabled' if entry must be visible if module is enabled.
